@@ -10,10 +10,15 @@
 - **Dataset:** NASA Statlog Shuttle Flight Telemetry Dataset (UCI Machine Learning Repository ID 148)
 - **Dataset Scale:** 58,000 real spaceflight telemetry records, 9 continuous sensor channels
 - **Framework & Hardware Acceleration:** PyTorch 2.x accelerated via **Apple Silicon Metal Performance Shaders (`mps`)**
-- **Team Size:** 3 Members
-  - **Member 1:** Model Architecture Design & Anomaly Detection Pipeline
-  - **Member 2:** Data Ingestion, Feature Normalization & Mini-Batch DataLoaders
-  - **Member 3:** Performance Evaluation, Subtype Recall Breakdown & Documentation
+- **Team Size:** 2 Members
+  - **Member 1 (Team Lead):** Mukilan S (Roll No: `241501123`) - Project Conception, Deep Autoencoder Architecture Design, Mathematical Formulations, PyTorch MPS GPU Implementation, Algorithms 1-3, Physical Conservation Ablation Analysis & Lead Author
+  - **Member 2:** Muthesh Kumar S (Roll No: `241501124`) - NASA Statlog Telemetry Ingestion, StandardScaler Preprocessing, DataLoader Streaming & Metric Tabulation
+
+### 📄 Submission Documents
+- 📕 [**Download Print-Ready PDF Report (51 Pages)**](Mini_Project_Report.pdf)
+- 📘 [**Download Microsoft Word Report (.docx)**](Mini_Project_Report.docx)
+- 📗 [**View Full Academic Markdown Report**](MINI_PROJECT_REPORT.md)
+- 📙 [**Interactive Jupyter Notebook**](experiment.ipynb)
 
 ---
 
@@ -57,7 +62,7 @@ The primary objectives of this mini project are:
 - **Scale:** 58,000 instances $\times$ 9 numerical telemetry sensor features.
 - **Target Distribution:**
   - **Class 1 (Nominal / Rad Flow):** 45,586 records (78.6%) $\to$ partitioned into 38,748 training and 6,838 validation instances.
-  - **Classes 2–7 (Mission Anomalies):** 12,414 records (21.4%) held out strictly for evaluation:
+  - **Classes 2-7 (Mission Anomalies):** 12,414 records (21.4%) held out strictly for evaluation:
     - *Class 2:* High Pressure Anomaly ($N=50$)
     - *Class 3:* Low Flow Anomaly ($N=171$)
     - *Class 4:* Valve Bypass Anomaly ($N=8,903$)
@@ -159,7 +164,7 @@ flowchart TD
 
 #### 1. Reconstruction Error Distribution (Nominal vs. Mission Anomalies)
 ![Reconstruction Error Distribution](mini_project_results.png)
-*Figure 1: Reconstruction error distributions (log scale) for nominal spaceflight telemetry (Class 1, blue) vs. mission flight anomalies (Classes 2–7, red). The decision boundary threshold cleanly separates the distributions.*
+*Figure 1: Reconstruction error distributions (log scale) for nominal spaceflight telemetry (Class 1, blue) vs. mission flight anomalies (Classes 2-7, red). The decision boundary threshold cleanly separates the distributions.*
 
 #### 2. Training and Validation Loss Curves
 ![Training and Validation Loss Curves](training_loss_curves.png)
